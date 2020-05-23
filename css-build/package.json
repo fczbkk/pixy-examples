@@ -1,0 +1,18 @@
+{
+  "name": "@fczbkk/css-build",
+  "version": "1.0.0",
+  "scripts": {
+    "build": "npm run styles-vendor && npm run styles-custom",
+    "prestyles-vendor": "mkdirp ./build",
+    "styles-vendor": "cat ./css/vendor/* > ./build/vendor.css",
+    "prestyles-custom": "mkdirp ./temp ./build",
+    "styles-custom": "node-sass ./css/custom/ --output ./temp/",
+    "poststyles-custom": "cat ./temp/* > ./build/style.css && rimraf ./temp"
+  },
+  "devDependencies": {
+    "mkdirp": "^1.0.4",
+    "node-sass": "^4.14.1",
+    "rimraf": "^3.0.2"
+  },
+  "dependencies": {}
+}

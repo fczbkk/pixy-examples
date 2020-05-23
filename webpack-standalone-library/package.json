@@ -1,0 +1,14 @@
+{
+  "name": "@fczbkk/webpack-standalone-library",
+  "version": "1.0.0",
+  "main": "build/index.js",
+  "devDependencies": {
+    "webpack": "^4.43.0",
+    "webpack-cli": "^3.3.11"
+  },
+  "scripts": {
+    "build": "webpack --config webpack.config.js",
+    "version": "npm run build && git add -A",
+    "postversion": "git push && git push --tags"
+  }
+}
